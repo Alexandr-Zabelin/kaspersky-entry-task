@@ -38,7 +38,9 @@ const PersonCardsList = ({children, ...props}) => {
                         {persons.map(person =>
                             <li key={person.login.username}>
                                 <PersonCard person={person}
-                                            eventHandlers={{onClick: handleDelete,}} />
+                                            eventHandlers={{
+                                                onClick: handleDelete,
+                                            }} />
                             </li>)}
                     </ul>
                     :
