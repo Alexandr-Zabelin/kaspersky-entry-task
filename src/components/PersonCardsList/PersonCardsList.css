@@ -1,0 +1,13 @@
+.person-cards-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 90%;
+    border: 1px solid rebeccapurple;
+    margin: auto;
+}
+
+.person-cards-list li {
+    padding: 10px;
+}

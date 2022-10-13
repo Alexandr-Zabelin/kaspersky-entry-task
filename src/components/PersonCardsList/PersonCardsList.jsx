@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
-import PersonCard from "../PersonCard/PersonCard";
+import React, {useEffect, useState} from 'react';
+import PersonCard from '../PersonCard/PersonCard';
+import './PersonCardsList.css'
 
-const PersonCardsList = () => {
-    const requestUrl = 'https://randomuser.me/api/?results=3&inc=gender,name,location,email,phone,picture';
+const PersonCardsList = ({children, ...props}) => {
+    const requestUrl = 'https://randomuser.me/api/?results=30&inc=gender,name,location,email,phone,picture';
     const [persons, setPersons] = useState([]);
 
     useEffect(() => {
@@ -16,7 +17,7 @@ const PersonCardsList = () => {
     }, [persons]);
 
     return (
-        <ul className="person-cards-list">
+        <ul {...props} className="person-cards-list">
             {persons.map(person =>
             <li key={person.phone}>
                 <PersonCard person={person} />
