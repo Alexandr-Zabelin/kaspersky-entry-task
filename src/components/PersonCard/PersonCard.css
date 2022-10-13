@@ -1,0 +1,46 @@
+.person-card {
+    text-align: center;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 5%;
+    height: 450px;
+    width: 350px;
+    background-color: #f1f0f0;
+}
+
+.person-card__del-btn-wrapper {
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.person-card__del-btn-wrapper .del-btn {
+    height: 35px;
+    width: 35px;
+}
+
+.person-card__name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.person-card__ava-wrapper {
+    margin: 15px 0;
+}
+
+.person-card__ava {
+    width: 250px;
+    height: 250px;
+}
+
+.person-card__additional-info {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20%;
+}
+
+.person-card__country {
+    font-weight: bold;
+}
