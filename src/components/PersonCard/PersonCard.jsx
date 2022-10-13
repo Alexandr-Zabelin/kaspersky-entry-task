@@ -10,6 +10,9 @@ const PersonCard = ({person, eventHandlers}) => {
         ? `${name.title} ${name.first} ${name.last}`
         : defaultText;
 
+    person.fullname = fullName;
+    person.country = person.location.country;
+
     return (
         <div className="person-card">
             <div className="person-card__del-btn-wrapper">
