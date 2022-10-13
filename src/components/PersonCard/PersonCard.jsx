@@ -1,8 +1,8 @@
 import React from 'react';
-import DeleteButton from "../ui/delete-button/DeleteButton";
+import DeleteButton from "../ui/DeleteButton/DeleteButton";
 import './PersonCard.css';
 
-const PersonCard = ({person}) => {
+const PersonCard = ({person, eventHandlers}) => {
     const defaultPhotoSrc = '';
     const defaultText = 'Unknown';
     const {name} = person;
@@ -13,7 +13,7 @@ const PersonCard = ({person}) => {
     return (
         <div className="person-card">
             <div className="person-card__del-btn-wrapper">
-                <DeleteButton />
+                <DeleteButton {...eventHandlers} data-id={person.login.username} />
             </div>
             <div className="person-card__name-wrapper">
                 <p className="person-card__name">{fullName}</p>

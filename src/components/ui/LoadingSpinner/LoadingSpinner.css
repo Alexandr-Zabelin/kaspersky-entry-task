@@ -1,0 +1,18 @@
+.loading-spinner {
+    width: 64px;
+    height: 64px;
+    border: 8px solid;
+    border-color: #3d5af1 transparent #3d5af1 transparent;
+    border-radius: 50%;
+    animation: spinner-anim .7s linear infinite;
+}
+
+@keyframes spinner-anim {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

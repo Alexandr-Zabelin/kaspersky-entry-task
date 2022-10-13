@@ -11,3 +11,8 @@
 .person-cards-list li {
     padding: 10px;
 }
+
+.person-cards-list-wrapper {
+    display: flex;
+    justify-content: center;
+}
