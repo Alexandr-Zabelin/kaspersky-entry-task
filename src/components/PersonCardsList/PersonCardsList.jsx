@@ -1,4 +1,4 @@
-import React, {useDebugValue, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import PersonCard from '../PersonCard/PersonCard';
 import LoadingSpinner from "../ui/LoadingSpinner/LoadingSpinner";
 import './PersonCardsList.css'
@@ -8,14 +8,10 @@ const PersonCardsList = ({children, ...props}) => {
     const [persons, setPersons] = useState([]);
 
     useEffect(() => {
-       setTimeout(() => fetch(requestUrl)
-           .then(response => response.json())
-           .then(json => setPersons([...json.results])), 5000);
+        fetch(requestUrl)
+            .then(response => response.json())
+            .then(json => setPersons([...json.results]));
     }, []);
-
-    useEffect(() => {
-       console.log(persons);
-    }, [persons]);
 
     const handleDelete = (e) => {
       e.preventDefault();
@@ -29,22 +25,24 @@ const PersonCardsList = ({children, ...props}) => {
       );
     };
 
+    const personCardsList = (
+        <ul {...props} className="person-cards-list">
+            {persons.map(person =>
+                <li key={person.login.username}>
+                    <PersonCard person={person}
+                                eventHandlers={{
+                                    onClick: handleDelete,
+                                }} />
+                </li>)}
+        </ul>
+    );
+
     return (
         <div className="person-cards-list-wrapper">
             {
                 persons.length !== 0
-                    ?
-                    <ul {...props} className="person-cards-list">
-                        {persons.map(person =>
-                            <li key={person.login.username}>
-                                <PersonCard person={person}
-                                            eventHandlers={{
-                                                onClick: handleDelete,
-                                            }} />
-                            </li>)}
-                    </ul>
-                    :
-                    <LoadingSpinner />
+                    ? personCardsList
+                    : <LoadingSpinner />
             }
         </div>
     );
