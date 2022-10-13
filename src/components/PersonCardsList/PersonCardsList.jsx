@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import PersonCard from '../PersonCard/PersonCard';
-import LoadingSpinner from "../ui/LoadingSpinner/LoadingSpinner";
+import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import './PersonCardsList.css'
 
 const PersonCardsList = ({children, ...props}) => {

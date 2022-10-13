@@ -1,5 +1,5 @@
 import React from 'react';
-import DeleteButton from "../ui/DeleteButton/DeleteButton";
+import DeleteButton from "../UI/DeleteButton/DeleteButton";
 import './PersonCard.css';
 
 const PersonCard = ({person, eventHandlers}) => {
