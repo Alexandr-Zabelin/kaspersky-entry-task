@@ -1,16 +1,38 @@
 .person-card {
-    text-align: center;
-    padding: 10px;
     font-size: 22px;
+    background-color: #f1f0f0;
+}
+
+.person-card_display-table {
+    text-align: center;
     border-radius: 5%;
+    padding: 10px;
     height: 450px;
     width: 350px;
-    background-color: #f1f0f0;
-    box-shadow: 0px 0px 2px 4px rgba(108, 130, 245, 0.2);
+    box-shadow: 0 0 2px 4px rgba(108, 130, 245, 0.2);
+}
+
+.person-card_display-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.person-card_display-groups {
+    border: 1px solid #000;
+    padding: 5px;
+    text-align: center;
 }
 
 .person-card__del-btn-wrapper {
     font-size: 30px;
+}
+
+.person-card__del-btn-wrapper_display-table,
+.person-card__del-btn-wrapper_display-groups {
     display: flex;
     justify-content: flex-end;
 }
@@ -26,9 +48,33 @@
     }
 }
 
+@media screen and (max-width: 900px) {
+    .person-card__additional-info_display-list .person-card__email,
+    .person-card__additional-info_display-list .person-card__phone {
+        display: none;
+    }
+
+    .person-card__name-wrapper_display-list {
+        width: 40%;
+    }
+
+    .person-card__additional-info_display-list {
+        width: 40%;
+    }
+
+    .person-card__additional-info_display-list .person-card__country {
+        width: 100%;
+    }
+}
+
 .person-card__del-btn-wrapper .del-btn {
     height: 35px;
     width: 35px;
+}
+
+.person-card__name-wrapper_display-list {
+    width: 20%;
+    text-align: center;
 }
 
 .person-card__name {
@@ -40,18 +86,53 @@
     margin: 15px 0;
 }
 
-.person-card__ava {
+.person-card__ava_display-table {
     width: 250px;
     height: 250px;
     border-radius: 5%;
 }
 
+.person-card__ava_display-list,
+.person-card__ava_display-groups {
+    display: none;
+}
+
 .person-card__additional-info {
     font-size: 1em;
+}
+
+.person-card__additional-info_display-table {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 20%;
+}
+
+.person-card__additional-info_display-list {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.person-card__additional-info_display-list .person-card__email {
+    width: 45%;
+    text-align: center;
+}
+
+.person-card__additional-info_display-list .person-card__phone {
+    width: 35%;
+    text-align: center;
+}
+
+.person-card__additional-info_display-list .person-card__country {
+    width: 20%;
+    text-align: center;
+}
+
+.person-card__additional-info_display-groups .person-card__phone ,
+.person-card__additional-info_display-groups .person-card__country {
+    display: none;
 }
 
 .person-card__country {

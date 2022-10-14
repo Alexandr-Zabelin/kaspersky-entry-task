@@ -1,12 +1,15 @@
 .person-cards-list {
     list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
     width: 90%;
 }
 
-.person-cards-list li {
+.person-cards-list_display-table {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.person-cards-list_display-table li {
     padding: 10px;
 }
 
@@ -18,4 +21,30 @@
 .person-cards-list-wrapper {
     display: flex;
     justify-content: center;
+}
+
+.person-cards-list-flex-container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.group-list {
+    list-style: none;
+}
+
+.group-heading {
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 30px;
+}
+
+.group-wrapper {
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 15px;
 }

@@ -35,6 +35,8 @@ function App() {
 
     const [persons, setPersons] = useState([]);
 
+    const [displayType, setDisplayType] = useState('table');
+
     const sortOptions = [
         {name: 'Full name', value: 'fullname'},
         {name: 'Email', value: 'email'},
@@ -61,6 +63,11 @@ function App() {
         }
     }, [sortedPersons, searchQuery]);
 
+    const changeDisplayType = ({target}) => {
+        const newValue = target.closest('button').value;
+
+        setDisplayType(newValue);
+    }
     const changeSearchQuery = ({target}) => {
         setSearchQuery(target.value);
     };
@@ -76,7 +83,9 @@ function App() {
 
     const fulfilledComponent = (
         <div className="App">
-            <DisplayType />
+            <DisplayType
+                onClick={changeDisplayType}
+                currentValue={displayType}/>
             <SearchBar
                 placeholder="Type to search"
                 value={searchQuery}
@@ -87,7 +96,8 @@ function App() {
                 onChange={changeSortType} />
             <PersonCardsList personCards={sortedAndSearchedPersons} eventHandlers={{
                 onClick: deletePostHandler,
-            }} />
+                }}
+                displayType={displayType}/>
         </div>
     );
     const errorComponent = <p>Error</p>;
