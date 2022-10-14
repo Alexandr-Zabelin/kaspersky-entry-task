@@ -3,6 +3,5 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 25px 100px;
-    border-bottom: 3px solid #3d5af1;
     flex-wrap: wrap;
 }

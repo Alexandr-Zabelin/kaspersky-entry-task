@@ -1,10 +1,10 @@
 import React, {useEffect, useMemo, useState} from "react";
-import PersonCardsList from "./PersonCardsList/PersonCardsList";
-import LoadingSpinner from "./UI/LoadingSpinner/LoadingSpinner";
-import HeaderPanel from "./HeaderPanel/HeaderPanel";
-import './App.css';
+import PersonCardsList from "../../components/PersonCardsList/PersonCardsList";
+import LoadingSpinner from "../../components/UI/LoadingSpinner/LoadingSpinner";
+import HeaderPanel from "../../components/HeaderPanel/HeaderPanel";
+import './Persons.css';
 
-function App() {
+function Persons() {
     const requestUrl = 'https://randomuser.me/api/?results=500&inc=gender,name,location,email,phone,picture,login';
     const [isResponseGotten, setIsResponseGotten] = useState(false);
     const [isResponseSuccess, setIsResponseSuccess] = useState(false);
@@ -16,8 +16,8 @@ function App() {
                 const results = json.results;
 
                 results.forEach((person) => {
-                   person.fullname = `${person.name.first} ${person.name.last} `;
-                   person.country = person.location.country;
+                    person.fullname = `${person.name.first} ${person.name.last} `;
+                    person.country = person.location.country;
                 });
 
                 setIsResponseGotten(true);
@@ -77,7 +77,7 @@ function App() {
     };
 
     const fulfilledComponent = (
-        <div className="App">
+        <div className="persons">
             <HeaderPanel
                 displayTypeOpt={{
                     changeDisplayType: changeDisplayType,
@@ -118,4 +118,4 @@ function App() {
     }
 }
 
-export default App;
+export default Persons;

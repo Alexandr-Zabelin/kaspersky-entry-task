@@ -1,0 +1,23 @@
+.home {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.home__text {
+    width: 400px;
+    border: 2px solid #3d5af1;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.home__heading {
+    text-align: center;
+    font-size: 30px;
+}
+
+.home__paragraph {
+    font-size: 24px;
+}
