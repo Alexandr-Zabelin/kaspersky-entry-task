@@ -76,8 +76,9 @@ function App() {
     const fulfilledComponent = (
         <div className="App">
             <SearchBar
-            value={searchQuery}
-            onChange={changeSearchQuery} />
+                placeholder="Type to search"
+                value={searchQuery}
+                onChange={changeSearchQuery} />
             <Select
                 options={sortOptions}
                 labelText="Sort by"
