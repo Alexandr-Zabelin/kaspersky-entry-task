@@ -17,6 +17,5 @@
 
 .search-bar__input:hover,
 .search-bar__input:focus {
-    cursor: pointer;
     outline: 3px solid #3d5af1;
 }
