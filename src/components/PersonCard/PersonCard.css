@@ -15,15 +15,20 @@
     justify-content: flex-end;
 }
 
+@media screen and (min-width: 900px) {
+    .person-card__del-btn-wrapper .del-btn {
+        opacity: 0;
+        transition: opacity .4s ease-out;
+    }
+
+    .person-card:hover .del-btn {
+        opacity: 1;
+    }
+}
+
 .person-card__del-btn-wrapper .del-btn {
     height: 35px;
     width: 35px;
-    opacity: 0;
-    transition: .4s ease-out;
-}
-
-.person-card:hover .del-btn {
-    opacity: 1;
 }
 
 .person-card__name {

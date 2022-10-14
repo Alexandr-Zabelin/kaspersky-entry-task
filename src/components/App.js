@@ -4,6 +4,7 @@ import './App.css';
 import LoadingSpinner from "./UI/LoadingSpinner/LoadingSpinner";
 import Select from "./UI/Select/Select";
 import SearchBar from "./UI/SearchBar/SearchBar";
+import DisplayType from "./DisplayType/DisplayType";
 
 function App() {
     console.log('app');
@@ -75,6 +76,7 @@ function App() {
 
     const fulfilledComponent = (
         <div className="App">
+            <DisplayType />
             <SearchBar
                 placeholder="Type to search"
                 value={searchQuery}
