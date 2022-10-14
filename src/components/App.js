@@ -1,14 +1,11 @@
 import React, {useEffect, useMemo, useState} from "react";
 import PersonCardsList from "./PersonCardsList/PersonCardsList";
-import './App.css';
 import LoadingSpinner from "./UI/LoadingSpinner/LoadingSpinner";
-import Select from "./UI/Select/Select";
-import SearchBar from "./UI/SearchBar/SearchBar";
-import DisplayType from "./DisplayType/DisplayType";
 import HeaderPanel from "./HeaderPanel/HeaderPanel";
+import './App.css';
 
 function App() {
-    const requestUrl = 'https://randomuser.me/api/?results=30&inc=gender,name,location,email,phone,picture,login';
+    const requestUrl = 'https://randomuser.me/api/?results=500&inc=gender,name,location,email,phone,picture,login';
     const [isResponseGotten, setIsResponseGotten] = useState(false);
     const [isResponseSuccess, setIsResponseSuccess] = useState(false);
 
@@ -113,7 +110,11 @@ function App() {
             return errorComponent
         }
     } else {
-        return <LoadingSpinner />;
+        return (
+            <div className="spinner-wrapper">
+                <LoadingSpinner />
+            </div>
+        );
     }
 }
 
