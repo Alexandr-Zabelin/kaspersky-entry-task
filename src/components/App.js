@@ -5,9 +5,10 @@ import LoadingSpinner from "./UI/LoadingSpinner/LoadingSpinner";
 import Select from "./UI/Select/Select";
 import SearchBar from "./UI/SearchBar/SearchBar";
 import DisplayType from "./DisplayType/DisplayType";
+import HeaderPanel from "./HeaderPanel/HeaderPanel";
 
 function App() {
-    const requestUrl = 'https://randomuser.me/api/?results=3&inc=gender,name,location,email,phone,picture,login';
+    const requestUrl = 'https://randomuser.me/api/?results=30&inc=gender,name,location,email,phone,picture,login';
     const [isResponseGotten, setIsResponseGotten] = useState(false);
     const [isResponseSuccess, setIsResponseSuccess] = useState(false);
 
@@ -80,17 +81,21 @@ function App() {
 
     const fulfilledComponent = (
         <div className="App">
-            <DisplayType
-                onClick={changeDisplayType}
-                currentValue={displayType}/>
-            <SearchBar
-                placeholder="Type to search"
-                value={searchQuery}
-                onChange={changeSearchQuery} />
-            <Select
-                options={sortOptions}
-                labelText="Sort by"
-                onChange={changeSortType} />
+            <HeaderPanel
+                displayTypeOpt={{
+                    changeDisplayType: changeDisplayType,
+                    displayType: displayType,
+                }}
+                searchOpt={{
+                    placeholder: "Type to search",
+                    searchQuery: searchQuery,
+                    changeSearchQuery: changeSearchQuery,
+                }}
+                selectOpt={{
+                    sortOptions: sortOptions,
+                    label: "Sort by",
+                    changeSortType: changeSortType,
+                }}/>
             <PersonCardsList
                 personCards={sortedAndSearchedPersons}
                 eventHandlers={{
