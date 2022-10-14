@@ -7,7 +7,6 @@ import SearchBar from "./UI/SearchBar/SearchBar";
 import DisplayType from "./DisplayType/DisplayType";
 
 function App() {
-    console.log('app');
     const requestUrl = 'https://randomuser.me/api/?results=3&inc=gender,name,location,email,phone,picture,login';
     const [isResponseGotten, setIsResponseGotten] = useState(false);
     const [isResponseSuccess, setIsResponseSuccess] = useState(false);
@@ -45,13 +44,11 @@ function App() {
     ];
     const [sortType, setSortType] = useState(sortOptions[0].value);
     const sortedPersons = useMemo(() => {
-        console.log('SORTED');
         return [...persons].sort((a, b) => a[sortType].localeCompare(b[sortType]));
     }, [persons, sortType]);
 
     const [searchQuery, setSearchQuery] = useState('');
     const sortedAndSearchedPersons = useMemo(() => {
-        console.log('SEARCHED');
         if (searchQuery) {
             return sortedPersons.filter(person =>
                 person.fullname
@@ -94,8 +91,10 @@ function App() {
                 options={sortOptions}
                 labelText="Sort by"
                 onChange={changeSortType} />
-            <PersonCardsList personCards={sortedAndSearchedPersons} eventHandlers={{
-                onClick: deletePostHandler,
+            <PersonCardsList
+                personCards={sortedAndSearchedPersons}
+                eventHandlers={{
+                    onClick: deletePostHandler,
                 }}
                 displayType={displayType}/>
         </div>
