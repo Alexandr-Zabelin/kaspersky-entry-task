@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import PersonCardsList from "./PersonCardsList/PersonCardsList";
 import './App.css';
 import LoadingSpinner from "./UI/LoadingSpinner/LoadingSpinner";
-import SortSelect from "./SortSelect/SortSelect";
-import SearchBar from "../SearchBar/SearchBar";
+import Select from "./UI/Select/Select";
+import SearchBar from "./UI/SearchBar/SearchBar";
 
 function App() {
     console.log('app');
-    const requestUrl = 'https://randomuser.me/api/?results=5&inc=gender,name,location,email,phone,picture,login';
+    const requestUrl = 'https://randomuser.me/api/?results=300&inc=gender,name,location,email,phone,picture,login';
     const [isResponseGotten, setIsResponseGotten] = useState(false);
     const [isResponseSuccess, setIsResponseSuccess] = useState(false);
 
@@ -33,17 +33,6 @@ function App() {
     }, []);
 
     const [persons, setPersons] = useState([]);
-    const [searchedPersons, setSearchedPersons] = useState([]);
-    useEffect(() => {
-        setSearchedPersons(persons);
-    }, [persons]);
-
-    const deletePostHandler = ({target}) => {
-        const targetId = target.dataset.id;
-
-        setPersons(prevState => prevState.filter(person =>
-            person.login.username !== targetId));
-    };
 
     const sortOptions = [
         {name: 'Full name', value: 'fullname'},
@@ -51,19 +40,49 @@ function App() {
         {name: 'Phone', value: 'phone'},
         {name: 'Country', value: 'country'},
     ];
+    const [sortType, setSortType] = useState(sortOptions[0].value);
+    const sortedPersons = useMemo(() => {
+        console.log('SORTED');
+        return [...persons].sort((a, b) => a[sortType].localeCompare(b[sortType]));
+    }, [persons, sortType]);
+
+    const [searchQuery, setSearchQuery] = useState('');
+    const sortedAndSearchedPersons = useMemo(() => {
+        console.log('SEARCHED');
+        if (searchQuery) {
+            return sortedPersons.filter(person =>
+                person.fullname
+                    .toLowerCase()
+                    .includes(searchQuery.toLowerCase())
+            );
+        } else {
+            return sortedPersons;
+        }
+    }, [sortedPersons, searchQuery]);
+
+    const changeSearchQuery = ({target}) => {
+        setSearchQuery(target.value);
+    };
+    const changeSortType = ({target}) => {
+        setSortType(target.value)
+    };
+    const deletePostHandler = ({target}) => {
+        const targetId = target.dataset.id;
+
+        setPersons(prevState => prevState.filter(person =>
+            person.login.username !== targetId));
+    };
 
     const fulfilledComponent = (
         <div className="App">
             <SearchBar
-                constSubject={persons}
-                setDynamicSubject={setSearchedPersons}
-                searchProp="fullname"/>
-            <SortSelect
+            value={searchQuery}
+            onChange={changeSearchQuery} />
+            <Select
                 options={sortOptions}
                 labelText="Sort by"
-                sortSubject={persons}
-                setSortSubject={setPersons}/>
-            <PersonCardsList personCards={searchedPersons} eventHandlers={{
+                onChange={changeSortType} />
+            <PersonCardsList personCards={sortedAndSearchedPersons} eventHandlers={{
                 onClick: deletePostHandler,
             }} />
         </div>
