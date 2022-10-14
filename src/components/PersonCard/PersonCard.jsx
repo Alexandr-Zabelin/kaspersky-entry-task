@@ -3,15 +3,18 @@ import DeleteButton from "../UI/DeleteButton/DeleteButton";
 import './PersonCard.css';
 
 const PersonCard = ({person, eventHandlers}) => {
-    const defaultPhotoSrc = '';
     const defaultText = 'Unknown';
     const {name} = person;
-    const fullName = name.title && name.first && name.last
-        ? `${name.title} ${name.first} ${name.last}`
+    // const fullName = name.title && name.first && name.last
+    //     ? `${name.title} ${name.first} ${name.last}`
+    //     : defaultText;
+
+    const fullName = name.first && name.last
+        ? `${name.first} ${name.last}`
         : defaultText;
 
-    person.fullname = fullName;
-    person.country = person.location.country;
+    // person.fullname = fullName;
+    // person.country = person.location.country;
 
     return (
         <div className="person-card">
@@ -23,7 +26,7 @@ const PersonCard = ({person, eventHandlers}) => {
             </div>
             <div className="person-card__ava-wrapper">
                 <img className="person-card__ava"
-                    src={person.picture?.large || defaultPhotoSrc}
+                    src={person.picture?.large}
                     alt={fullName} />
             </div>
             <div className="person-card__additional-info">
