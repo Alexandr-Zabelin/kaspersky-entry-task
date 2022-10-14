@@ -8,7 +8,7 @@ import DisplayType from "./DisplayType/DisplayType";
 
 function App() {
     console.log('app');
-    const requestUrl = 'https://randomuser.me/api/?results=300&inc=gender,name,location,email,phone,picture,login';
+    const requestUrl = 'https://randomuser.me/api/?results=3&inc=gender,name,location,email,phone,picture,login';
     const [isResponseGotten, setIsResponseGotten] = useState(false);
     const [isResponseSuccess, setIsResponseSuccess] = useState(false);
 
