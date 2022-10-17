@@ -7,16 +7,15 @@
 .display-type__button {
     width: 60px;
     height: 60px;
-    outline: 2px solid #3d5af1;
+    border: 2px solid rgba(103, 98, 98, 0.76);
     border-radius: 10%;
-    border: none;
     background-color: #FFF;
     cursor: pointer;
 }
 
 .display-type__button:hover,
 .display-type__button:focus {
-    outline: 3px solid #3d5af1;
+    border-color: #23d1ae;
 }
 
 .display-type__button_table {
@@ -32,7 +31,7 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    background-color: #c2c9d6;;
+    background-color: #44ccb0;
     border-radius: 20%;
 }
 
@@ -47,7 +46,7 @@
     display: block;
     width: 45px;
     height: 12px;
-    background-color: #c2c9d6;;
+    background-color: #44ccb0;
     border-radius: 10%;
 }
 
@@ -61,6 +60,6 @@
     display: block;
     width: 12px;
     height: 45px;
-    background-color: #c2c9d6;;
+    background-color: #44ccb0;;
     border-radius: 10%;
 }
