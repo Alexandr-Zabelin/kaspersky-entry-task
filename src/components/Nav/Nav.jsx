@@ -9,10 +9,10 @@ const Nav = () => {
                 <h1 className="nav__heading">Kaspersy JS Entry Task</h1>
                 <ul className="nav__list">
                     <li className="nav__item">
-                        <Link className="nav__link" to="/">Home</Link>
+                        <Link className="nav__link" to="/kaspersky-entry-task">Home</Link>
                     </li>
                     <li className="nav__item">
-                        <Link className="nav__link" to="/main">Main</Link>
+                        <Link className="nav__link" to="/kaspersky-entry-task/main">Main</Link>
                     </li>
                 </ul>
             </nav>

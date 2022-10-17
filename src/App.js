@@ -9,7 +9,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Nav />}>
+                <Route path="/kaspersky-entry-task" element={<Nav />}>
                     <Route index element={<Home />} />
                     <Route path="main" element={<Persons />} />
                     <Route path="*" element={<PageNotFound />} />
