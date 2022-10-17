@@ -1,18 +1,19 @@
 .select-wrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 45px;
+    justify-content: center;
+    height: 75px;
     font-size: 30px;
+    flex-direction: column;
 }
 
 .select-label {
     font-size: 30px;
+    margin-bottom: 5px;
 }
 
 .select {
-    outline: 2px solid #3d5af1;
+    outline: 2px solid #44ccb0;
     border: none;
     border-radius: 4px;
     font-size: .7em;
@@ -21,5 +22,5 @@
 .select:hover,
 .select:focus {
     cursor: pointer;
-    outline: 3px solid #3d5af1;
+    outline: 3px solid #44ccb0;
 }
