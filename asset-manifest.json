@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/kaspersky-entry-task/static/css/main.ace05ac8.css",
-    "main.js": "/kaspersky-entry-task/static/js/main.c0479630.js",
+    "main.css": "/kaspersky-entry-task/static/css/main.ed58e8b5.css",
+    "main.js": "/kaspersky-entry-task/static/js/main.573e8704.js",
     "index.html": "/kaspersky-entry-task/index.html",
-    "main.ace05ac8.css.map": "/kaspersky-entry-task/static/css/main.ace05ac8.css.map",
-    "main.c0479630.js.map": "/kaspersky-entry-task/static/js/main.c0479630.js.map"
+    "main.ed58e8b5.css.map": "/kaspersky-entry-task/static/css/main.ed58e8b5.css.map",
+    "main.573e8704.js.map": "/kaspersky-entry-task/static/js/main.573e8704.js.map"
   },
   "entrypoints": [
-    "static/css/main.ace05ac8.css",
-    "static/js/main.c0479630.js"
+    "static/css/main.ed58e8b5.css",
+    "static/js/main.573e8704.js"
   ]
 }
