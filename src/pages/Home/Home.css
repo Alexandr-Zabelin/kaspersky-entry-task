@@ -3,12 +3,13 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
 }
 
 .home__text {
-    width: 400px;
-    border: 2px solid #3d5af1;
+    margin-top: 50px;
+    width: 450px;
+    text-align: center;
+    border: 2px solid #23d1ae;
     border-radius: 5px;
     padding: 5px 10px;
 }
@@ -16,6 +17,7 @@
 .home__heading {
     text-align: center;
     font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .home__paragraph {
