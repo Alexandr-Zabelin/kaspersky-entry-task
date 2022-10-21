@@ -1,14 +1,18 @@
 {
   "files": {
-    "main.css": "/kaspersky-entry-task/static/css/main.ea4d13a6.css",
+    "main.css": "/kaspersky-entry-task/static/css/main.aadf9182.css",
     "main.js": "/kaspersky-entry-task/static/js/main.4f50196a.js",
+    "static/media/kaspersky-sans.eot": "/kaspersky-entry-task/static/media/kaspersky-sans.b8b1a1c98857aba15b9e.eot",
+    "static/media/kaspersky-sans.ttf": "/kaspersky-entry-task/static/media/kaspersky-sans.83858037aaa07e7e7e45.ttf",
+    "static/media/kaspersky-sans.woff": "/kaspersky-entry-task/static/media/kaspersky-sans.9a5c420685ec6482c769.woff",
+    "static/media/kaspersky-sans.woff2": "/kaspersky-entry-task/static/media/kaspersky-sans.ea3f0d419a6d9ff38f1a.woff2",
     "static/media/kaspersky-logo.svg": "/kaspersky-entry-task/static/media/kaspersky-logo.e79ac6c57fcaf0a58fbb.svg",
     "index.html": "/kaspersky-entry-task/index.html",
-    "main.ea4d13a6.css.map": "/kaspersky-entry-task/static/css/main.ea4d13a6.css.map",
+    "main.aadf9182.css.map": "/kaspersky-entry-task/static/css/main.aadf9182.css.map",
     "main.4f50196a.js.map": "/kaspersky-entry-task/static/js/main.4f50196a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea4d13a6.css",
+    "static/css/main.aadf9182.css",
     "static/js/main.4f50196a.js"
   ]
 }
