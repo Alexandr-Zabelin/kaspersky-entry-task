@@ -1,3 +1,10 @@
+@font-face {font-family: "Kaspersky Sans";
+    src: url("../public/fonts/kaspersky-sans.eot"); /* IE9*/
+    src: url("../public/fonts/kaspersky-sans.woff2") format("woff2"), /* chrome、firefox */
+    url("../public/fonts/kaspersky-sans.woff") format("woff"), /* chrome、firefox */
+    url("../public/fonts/kaspersky-sans.ttf") format("truetype") /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+
 * {
     margin: 0;
     padding: 0;
